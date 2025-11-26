@@ -1,2 +1,0 @@
-# Vibero
-A TVOS app
