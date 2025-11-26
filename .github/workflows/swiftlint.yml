@@ -1,0 +1,30 @@
+name: SwiftLint
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  lint:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Homebrew (if missing)
+        run: |
+          if ! command -v brew >/dev/null 2>&1; then
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            echo "/usr/local/bin" >> $GITHUB_PATH || true
+            echo "/opt/homebrew/bin" >> $GITHUB_PATH || true
+          fi
+
+      - name: Install SwiftLint
+        run: |
+          brew update
+          brew install swiftlint || brew upgrade swiftlint || true
+
+      - name: Run SwiftLint
+        run: swiftlint

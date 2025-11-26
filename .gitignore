@@ -1,0 +1,47 @@
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.xcscmblueprint
+
+# User data
+**/*.xcuserdatad/
+**/*.xcuserdata/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# CocoaPods (if used)
+Pods/
+
+# Carthage (if used)
+Carthage/Build/
+
+# Archives
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Asset catalogs (keep catalog, ignore generated outputs)
+*.car
+
+# Temporary
+*.tmp
+*.log
+
+# Xcode Workspace autosave
+*.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
